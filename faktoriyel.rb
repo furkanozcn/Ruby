@@ -1,10 +1,11 @@
 def faktoriyel(sayi)
-if(sayi==1)
-1
-else
-sayi*faktoriyel(sayi-1)
+  if(sayi == 1)
+   1
+  else
+   sayi * faktoriyel(sayi-1)
+  end
 end
-end
+
 puts("Sayı giriniz:")
-a=gets.chop.to_i
+a = gets.chop.to_i
 puts faktoriyel(a)
