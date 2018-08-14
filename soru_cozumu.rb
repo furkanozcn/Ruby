@@ -1,6 +1,5 @@
 require 'securerandom'
 class Sorular
-   
     def sayiOlustur()
        sayi1=SecureRandom.random_number(100)
        sayi2=SecureRandom.random_number(100)
@@ -21,10 +20,10 @@ class Sorular
        end   
     end
     def kontrol(sonuc)
-        if sonuc==5
+        if (sonuc==(@sayi1+@sayi2)||sonuc==(@sayi1-@sayi2)||sonuc==(@sayi1*@sayi2)||sonuc==(@sayi1/@sayi2))
             puts "Cevap Doğru"
         else
-            puts sonuc
+            puts "Cevap Yanlış"
         end
     end
 end
@@ -32,4 +31,5 @@ sonuclar=Sorular.new
 puts sonuclar.sayiOlustur()
 puts "Sonuç:"
 sonuc=gets.chop
-puts sonuclar.kontrol(sonuc)
+puts sonuclar.kontrol(sonuc.to_i)
+
